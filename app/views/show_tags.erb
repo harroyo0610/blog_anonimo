@@ -1,0 +1,6 @@
+<h1>**************</h1>
+<p>Post con este tag:</p> 
+<%= posts = Post.where(label:.inclue(@tag_read)) %>
+<% posts.each do |value| %>
+  <p> value.title %><br></p>
+<% end %>

@@ -1,0 +1,8 @@
+<h1>Selecciona el post que desea editar</h1>
+<form method="post" action="/posts/edit_post/edit">
+<% Post.all.each_with_index do |t, i| %>
+  <input type="radio" name="select[<%= t.id %>]" value="<%= t.title %>"><%= "   #{i + 1}.- #{t.title}"%>
+  <br>
+  <% end %>
+<input type="submit">
+</form>

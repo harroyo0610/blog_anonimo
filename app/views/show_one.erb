@@ -1,0 +1,11 @@
+<h1>Selecciona el title del post que desea ver:</h1>
+
+<form method="post" action="/posts/show_one/show">
+<% @all_posts.each_with_index do |t, i| %>
+  <input type="radio" name="select[<%= t.id %>]" value="<%= t.title %>"><%= "   #{i + 1}.- #{t.title}"%>
+  <br>
+  <% end %>
+<input type="submit">
+</form>
+
+

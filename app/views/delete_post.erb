@@ -1,0 +1,9 @@
+<h1>Selecciona los post que desea borrar:</h1>
+
+<form method="post" action="/posts/delete_post/delete">
+<% Post.all.each_with_index do |t, i| %>
+  <input type="checkbox" size="70" name="select[<%= t.id %>]" value="<%= t.title %>"><%= "   #{i + 1}.- #{t.title}"%>
+  <br>
+  <% end %>
+<input type="submit">
+</form>

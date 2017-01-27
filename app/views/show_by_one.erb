@@ -1,0 +1,9 @@
+<h1>Aqui estan los datos del post que seleccionaste</h1>
+<% post = Post.find_by(id: @one_selected.keys) %>
+<p> Title: <br><%="#{post.title}"%> </p>
+<p> Tags:</p> 
+<% post_select = post.tags%> 
+<% post_select.each do |t| %> 
+<p><%= "#{t.label}" %></p>
+<% end %>
+<p> Description: <br><%="#{post.description}"%> </p>

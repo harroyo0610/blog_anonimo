@@ -1,0 +1,13 @@
+<h1>Aqui estan los posts que borraste</h1>
+<% post = Post.where(id: @deleted_post.keys) %>
+<% post.each do |value| %>
+<p> Title: <br><%="#{value.title}"%> </p>
+<% posts = Post.find_by(id: value.id).tags %>
+  <h4>Tags:</h4>
+  <% posts.each do |t| %> 
+   <p><%= "#{t.label}" %></p>
+  <% end %>
+<p> Description: <br><%="#{value.description}"%> <br> <hr></p>
+<% Post.where(id: @deleted_post.keys).destroy_all %>
+<% end %>
+

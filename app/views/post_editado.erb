@@ -1,0 +1,10 @@
+
+<h1>Aqui estan los posts que editaste</h1>
+<% post = Post.find_by(id: @id_post) %>
+<p> Title: <br><%="#{post.title}"%> </p>
+<% posts = Post.find_by(id: post.id).tags %>
+  <h4>Tags:</h4>
+  <% posts.each do |t| %> 
+   <p><%= "#{t.label}" %></p>
+  <% end %>
+<p> Description: <br><%="#{post.description}"%> <br> <hr></p>

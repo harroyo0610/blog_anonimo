@@ -1,0 +1,10 @@
+<h3>Agregaste el post con los siguientes datos:</h3>
+<h4>Title:</h4>
+<p> <%= @post_new.title %> </p>
+<h4>Tags:</h4>
+<% posts = Post.find_by(id: @post_new.id).tags %>
+<% posts.each do |t| %> 
+<p><%= "#{t.label}" %></p>
+<% end %>
+<h4>Description:</h4>
+<p> <%= @post_new.description %> </p>

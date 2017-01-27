@@ -1,0 +1,18 @@
+<h1>Edita tu post</h1>
+<% post = Post.find_by(id: @edit_post.keys) %>
+<form method="post" action="/posts/edit_post/edit/create_edit">
+  <input name="id" value="<%= post.id %>" readonly>
+  <p> Title: </p><br>
+  <input type="text" name="title" size="70" value="<%= post.title %>">
+  <p> Tags: </p><br>
+  <% post_select = post.tags%>
+  <% array_tags="" %> 
+  <% post_select.each do |t| %> 
+  <% array_tags += "#{t.label} " %>
+  <% end %>
+  <input type="text" name="label" size="70" value="<%= array_tags %>">
+  <p> Description: </p><br>
+  <textarea cols="70" name="description" rows="10" type="text"><%= post.description %></textarea>
+  <input type="submit">
+</form>
+
